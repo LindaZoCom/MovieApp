@@ -10,6 +10,6 @@ public class FeatureFilm extends Movie {
     }
     @Override
     public String describe() {
-        return "Spelfilm: " + super.describe() + ",genre: " + genre;
+        return "Spelfilm: " + basicInfo() + ",genre: " + genre;
     }
 }

@@ -1,4 +1,4 @@
-public class Movie {
+public abstract class Movie {
     private final String title;
     private final int durationMinutes;
 
@@ -14,7 +14,12 @@ public class Movie {
     public int getDurationMinutes() {
         return durationMinutes;
     }
-    public String describe() {
-        return title +"(" + durationMinutes + " min)";
+
+    protected String basicInfo() {
+        return title + "(" + durationMinutes + " min)";
     }
-}
+
+    public abstract String describe();
+    }
+
+
