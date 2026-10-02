@@ -16,10 +16,11 @@ public abstract class Movie {
     }
 
     protected String basicInfo() {
-        return title + "(" + durationMinutes + " min)";
+        return title + " (" + durationMinutes + " min)";
     }
 
     public abstract String describe();
-    }
+}
+
 
 
