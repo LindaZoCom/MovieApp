@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class MovieApp {
     public static void main(String[] args) {
        MovieRepository movieRepository = new ConsoleMovieRepository(); //Skapar EN lagringsinstans
+//     MovieRepository movieRepository = new ReverseMovieRepository(); // Övning B, sorterar i omvänd ordning mot ovan rad
         MovieService movieService = new MovieService(movieRepository); // Skickar in samma instans
         movieService.addMovie(new FeatureFilm("Shrek", 90, "Animation")); // Startar lagringskedjan
         movieService.addMovie(new Documentary("Övningsdokumentär", 55, "Filmhistoria")); //Lagrar en annan Movie-typ
@@ -15,6 +16,13 @@ public class MovieApp {
         movieService.printAllMovies(); // Visar vad som finns i listan
         System.out.println();
         System.out.println("Antal filmer: " + movieService.getMovieCount());
+
+     // ÖVNING DEL A
+     // Metoden countMoviesMatching(String searchText)
+     // ska finnas i MovieService och returnera ett antal.
+     // ----------------------------------------------------
+     int numberOfMatches = movieService.countMoviesMatching("shrek");
+     System.out.println("Antal träffar: " + numberOfMatches);
 
         // ----------------------------------------------------
         // ÖVNING DEL 2
@@ -53,5 +61,7 @@ public class MovieApp {
         System.out.println();
         System.out.println("=== Sökning: rymdskepp ===");
         movieService.printMoviesMatching("rymdskepp");
+
+
     }
 }

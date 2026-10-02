@@ -47,4 +47,22 @@ public class MovieService { // Serviceklassen känner till kontraktet MovieRepos
             System.out.println("Inga filmer hittades.");
         }
     }
+
+    // Övning A
+    public int countMoviesMatching(String searchText) {
+        ArrayList<Movie> movies = movieRepository.getAll();
+
+        int count = 0;
+
+        for (Movie movie : movies) {
+            String title = movie.getTitle().toLowerCase();
+            String search = searchText.toLowerCase();
+
+            if (title.contains(search)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }
